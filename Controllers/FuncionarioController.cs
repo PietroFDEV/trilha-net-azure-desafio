@@ -99,7 +99,7 @@ public class FuncionarioController : ControllerBase
         var funcionarioLog = new FuncionarioLog(funcionarioBanco, TipoAcao.Remocao, funcionarioBanco.Departamento, Guid.NewGuid().ToString());
 
         // TODO: Chamar o método UpsertEntity para salvar no Azure Table
-        tableClient.DeleteEntity(id);
+        tableClient.DeleteEntity(id, id);
         return NoContent();
     }
 }
